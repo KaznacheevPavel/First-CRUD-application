@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование человека</title>
+</head>
+<body>
+    <form th:action="@{/people/{id}(id=${person.getId()})}" method="POST" th:object="person">
+        <label for="FIO"></label>
+        <input type="text" name="FIO" id="FIO" th:value="${person.getFIO()}">
+        <label for="year"></label>
+        <input type="text" name="year" id="year" th:value="${person.getYear()}">
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>
